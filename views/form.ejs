@@ -1,0 +1,135 @@
+<%- include("header.ejs") %>
+
+<div class="aadhaar-main-container" style="margin-top: 100px;">
+  <h2 class="aadhaar-page-title">
+    <i class="fas fa-id-card-alt"></i>
+    Tourist Aadhaar Verification
+  </h2>
+ 
+  <form id="aadhaar-lookup-form" class="aadhaar-lookup-form">
+    <div class="aadhaar-input-group">
+      <label for="aadhaar-number-input" class="aadhaar-form-label">
+        <i class="fas fa-fingerprint"></i>
+        Aadhaar Number
+      </label>
+      <input type="text" 
+             id="aadhaar-number-input" 
+             class="aadhaar-form-input aadhaar-number-input with-icon" 
+             placeholder="Enter Aadhaar number"
+             maxlength="14"
+             
+             title="Please enter a 12-digit Aadhaar number"
+             required>
+      <i class="fas fa-id-card"></i>
+    </div>
+    <button type="submit" class="aadhaar-submit-btn">
+      <i class="fas fa-search"></i>
+      Lookup Aadhaar
+    </button>
+  </form>
+  
+  <p id="aadhaar-lookup-result" class="aadhaar-lookup-result"></p>
+ 
+  <form id="aadhaar-verify-form" class="aadhaar-verify-form" style="display:none;">
+    <input type="hidden" id="aadhaar-hidden-input">
+    
+    <div class="aadhaar-input-group">
+      <label for="aadhaar-fullname-input" class="aadhaar-form-label">
+        <i class="fas fa-user"></i>
+        Full Name
+      </label>
+      <input type="text" 
+             id="aadhaar-fullname-input" 
+             class="aadhaar-form-input with-icon" 
+             placeholder="Enter your full name as per Aadhaar"
+             required>
+      <i class="fas fa-user"></i>
+    </div>
+    
+    <div class="aadhaar-input-group">
+      <label for="aadhaar-dob-input" class="aadhaar-form-label">
+        <i class="fas fa-calendar-alt"></i>
+        Date of Birth
+      </label>
+      <input type="date" 
+             id="aadhaar-dob-input" 
+             class="aadhaar-form-input with-icon" 
+             required>
+      <i class="fas fa-calendar-alt"></i>
+    </div>
+
+    <div class="aadhaar-input-group">
+      <label for="aadhaar-password-input" class="aadhaar-form-label">
+        <i class="fas fa-lock"></i>
+        Password
+      </label>
+      <input type="password" 
+             id="aadhaar-password-input" 
+             class="aadhaar-form-input with-icon" 
+             placeholder="Create a password"
+             required>
+      <i class="fas fa-lock"></i>
+    </div>
+
+    <div class="aadhaar-input-group">
+      <label for="aadhaar-secret-input" class="aadhaar-form-label">
+        <i class="fas fa-key"></i>
+        Secret Word
+      </label>
+      <input type="text" 
+             id="aadhaar-secret-input" 
+             class="aadhaar-form-input with-icon" 
+             placeholder="Enter a secret word for recovery"
+             required>
+      <i class="fas fa-key"></i>
+    </div>
+    
+    <div class="aadhaar-input-group">
+      <label for="aadhaar-mobile-input" class="aadhaar-form-label">
+        <i class="fas fa-mobile-alt"></i>
+        Mobile Number
+      </label>
+      <input type="text" 
+             id="aadhaar-mobile-input" 
+             class="aadhaar-form-input with-icon" 
+             placeholder="Enter mobile number"
+             maxlength="10"
+             pattern="\d{10}"
+             title="Please enter a 10-digit mobile number"
+             required>
+      <i class="fas fa-mobile-alt"></i>
+    </div>
+    
+    <div class="aadhaar-input-group">
+      <label for="aadhaar-travel-input" class="aadhaar-form-label">
+        <i class="fas fa-map-marker-alt"></i>
+        Current Travel Location
+      </label>
+      <input type="text" 
+             id="aadhaar-travel-input" 
+             class="aadhaar-form-input with-icon" 
+             placeholder="Enter your current travel location"
+             required>
+      <i class="fas fa-map-marker-alt"></i>
+    </div>
+    
+    <button type="submit" class="aadhaar-submit-btn">
+      <i class="fas fa-check-circle"></i>
+      Verify Identity
+    </button>
+  </form>
+
+  <div class="aadhaar-login-link">
+    <p>Already verified? <a href="/login">Login Here</a></p>
+  </div>
+  
+  <div id="aadhaar-verify-result" class="aadhaar-verify-result"></div>
+  <canvas id="aadhaar-qr-canvas" class="aadhaar-qr-canvas"></canvas>
+</div>
+
+<p id="aadhaar-demo-message" class="aadhaar-demo-message">
+  <i class="fas fa-exclamation-triangle"></i>
+  This is a demo website. Please do not enter your real Aadhaar details
+</p>
+
+<%- include("footer.ejs") %>

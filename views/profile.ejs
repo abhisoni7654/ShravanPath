@@ -1,0 +1,114 @@
+<%- include('header.ejs') %>
+
+<div id="profile-main-container">
+    <h1 class="profile-page-title">
+        <i class="fas fa-user-circle"></i>
+        Your Profile
+    </h1>
+    <p class="profile-page-subtitle">Manage your information and emergency contacts.</p>
+    
+    <div class="profile-main-card">
+        <div class="profile-card-body">
+            <form class="profile-form" action="/profile/update" method="POST">
+                
+                <h5 class="profile-section-title">
+                    <i class="fas fa-id-card"></i>
+                    Your Details
+                </h5>
+                
+                <div class="profile-form-group">
+                    <label class="profile-form-label">Full Name</label>
+                    <input type="text" 
+                           class="profile-readonly-input" 
+                           value="<%= user.fullName %>" 
+                           disabled 
+                           readonly>
+                </div>
+                
+                <div class="profile-form-group">
+                    <label class="profile-form-label">Aadhaar Number</label>
+                    <input type="text" 
+                           class="profile-readonly-input" 
+                           value="<%= user.aadhaarNumber %>" 
+                           disabled 
+                           readonly>
+                </div>
+                
+                <div class="profile-form-group">
+                    <label class="profile-form-label">Date of Birth</label>
+                    <input type="text" 
+                           class="profile-readonly-input" 
+                           value="<%= user.dob %>" 
+                           disabled 
+                           readonly>
+                </div>
+                
+                <div class="profile-blockchain-section">
+                    <div class="profile-form-group">
+                        <label class="profile-form-label">
+                            <i class="fas fa-link"></i>
+                            Blockchain ID:
+                        </label>
+                        <input type="text" 
+                               class="profile-readonly-input" 
+                               value="<%= user.blockchain_id %>" 
+                               disabled 
+                               readonly>
+                    </div>
+                </div>
+                
+                <hr class="profile-section-divider">
+                
+                <h5 class="profile-section-title">
+                    <i class="fas fa-phone-alt"></i>
+                    Emergency Contacts
+                </h5>
+                
+                <div id="profile-contacts-container" class="profile-contacts-container">
+                    <% if (user.emergencyContacts && user.emergencyContacts.length > 0) { %>
+                        <% user.emergencyContacts.forEach((contact, index) => { %>
+                            <div class="profile-contact-row">
+                                <div class="profile-contact-col">
+                                    <label class="profile-contact-label">Name:</label>
+                                    <p class="profile-contact-value"><%= contact.name %></p>
+                                </div>
+                                <div class="profile-contact-col">
+                                    <label class="profile-contact-label">Phone:</label>
+                                    <p class="profile-contact-value"><%= contact.mobile %></p>
+                                </div>
+                            </div>
+                        <% }); %>
+                    <% } else { %>
+                        <div class="profile-contact-row">
+                            <div class="profile-contact-col">
+                                <input type="text" 
+                                       name="contacts[0][name]" 
+                                       class="profile-contact-input" 
+                                       placeholder="Contact Name" 
+                                       required>
+                            </div>
+                            <div class="profile-contact-col">
+                                <input type="tel" 
+                                       name="contacts[0][mobile]" 
+                                       class="profile-contact-input" 
+                                       placeholder="Mobile Number" 
+                                       required>
+                            </div>
+                        </div>
+                    <% } %>
+                </div>
+               
+                <hr class="profile-section-divider">
+               
+                <div class="profile-submit-container">
+                    <button type="submit" class="profile-submit-btn">
+                        <i class="fas fa-save"></i>
+                        Save Profile
+                    </button>
+                </div>
+            </form>
+        </div>
+    </div>
+</div>
+
+<%- include('footer.ejs') %>

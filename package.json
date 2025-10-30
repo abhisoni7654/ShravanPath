@@ -1,0 +1,26 @@
+{
+  "name": "shravanpath",
+  "version": "1.0.0",
+  "main": "server.js",
+  "type": "module",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "node server.js"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "description": "",
+  "dependencies": {
+    "@faker-js/faker": "^10.0.0",
+    "@picovoice/porcupine-web": "^3.0.3",
+    "@picovoice/web-voice-processor": "^4.0.9",
+    "connect-mongo": "^5.1.0",
+    "cors": "^2.8.5",
+    "ejs": "^3.1.10",
+    "express": "^5.1.0",
+    "express-session": "^1.18.2",
+    "node-fetch": "^3.3.2",
+    "twilio": "^5.9.0"
+  }
+}

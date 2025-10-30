@@ -1,0 +1,56 @@
+<%- include('header.ejs') %>
+
+<div class="ledger-main-wrapper">
+    <div class="ledger-header-section">
+        <h1 class="ledger-main-title">Transaction Ledger</h1>
+        <a href="/dashboard" class="ledger-back-button">← Back to Dashboard</a>
+    </div>
+
+    <div class="ledger-data-card">
+        <div class="ledger-card-header">
+            Immutable Verification Log
+        </div>
+        <div class="ledger-card-content">
+            <% if (entries && entries.length > 0) { %>
+                <div class="ledger-table-container">
+                    <table class="ledger-transaction-table">
+                        <thead>
+                            <tr>
+                                <th class="ledger-table-header-cell">Timestamp</th>
+                                <th class="ledger-table-header-cell">Action</th>
+                                <th class="ledger-table-header-cell">Aadhaar Number</th>
+                                <th class="ledger-table-header-cell">Blockchain ID</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <% entries.slice().reverse().forEach(entry => { %>
+                                <tr class="ledger-transaction-row">
+                                    <td class="ledger-table-cell">
+                                        <div class="ledger-timestamp-cell">
+                                            <%= new Date(entry.timestamp).toLocaleString() %>
+                                        </div>
+                                    </td>
+                                    <td class="ledger-table-cell">
+                                        <span class="ledger-action-badge"><%= entry.action %></span>
+                                    </td>
+                                    <td class="ledger-table-cell">
+                                        <div class="ledger-aadhaar-cell"><%= entry.aadhaarNumber %></div>
+                                    </td>
+                                    <td class="ledger-table-cell">
+                                        <div class="ledger-blockchain-id"><%= entry.blockchain_id %></div>
+                                    </td>
+                                </tr>
+                            <% }); %>
+                        </tbody>
+                    </table>
+                </div>
+            <% } else { %>
+                <div class="ledger-empty-state">
+                    The ledger is empty. No transactions have been recorded.
+                </div>
+            <% } %>
+        </div>
+    </div>
+</div>
+
+<%- include('footer.ejs') %>

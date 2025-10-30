@@ -1,0 +1,110 @@
+<%- include("header.ejs") %>    
+
+    <input type="hidden" id="user-blockchain-id" value="<%= user.blockchain_id %>">
+    <% if (user.secretWord === null && user.secretWordUsedAt) { %>
+        <div id="risk-banner" class="hidden">
+    </div>
+    <div class="alert alert-warning" role="alert">
+        <h4 class="alert-heading">Action Required!</h4>
+        <p>
+            Your secret word was used to resolve an emergency on 
+            <strong><%= new Date(user.secretWordUsedAt).toLocaleString() %></strong>. 
+            For your security, please set a new one immediately.
+        </p>
+        <hr>
+        <form action="/api/set-new-secret-word" method="POST" class="d-flex align-items-center">
+            <input type="text" 
+                   name="newSecretWord" 
+                   class="form-control me-2" 
+                   placeholder="Enter new secret word" 
+                   required>
+            <button type="submit" class="btn btn-success">Save</button>
+        </form>
+    </div>
+<% } %>
+    <div class="main-container">
+        <!-- Welcome Section -->
+        <div class="welcome-section">
+            <h1 class="welcome-title">Welcome to Your Safety Dashboard</h1>
+            <p class="welcome-subtitle">Your AI-powered companion for secure and safe travel experiences</p>
+        </div>
+
+        <!-- Emergency Panic Button -->
+        <div class="panic-button-container">
+            <button class="panic-button" onclick="activatePanic()">
+                EMERGENCY<br>PANIC
+            </button>
+        </div>
+
+        <!-- Status Bar -->
+        <div class="status-bar">
+            <div class="status-item">
+                <div class="status-indicator"></div>
+                <span class="status-text">GPS: Active</span>
+            </div>
+            <div class="status-item">
+                <div class="status-indicator"></div>
+                <span class="status-text">Network: Connected</span>
+            </div>
+            <div class="status-item">
+                <div class="status-indicator"></div>
+                <span class="status-text">Emergency Contacts: 1</span>
+            </div>
+            <div class="status-item">
+                <div class="status-indicator"></div>
+                <span class="status-text">Digital ID: Verified</span>
+            </div>
+        </div>
+    </div>
+
+        <!-- Features Grid -->
+        <div class="features-grid">
+            <!-- SOS Alert Card -->
+            <div class="feature-card sos-card" onclick="activateSOS()">
+                <div class="card-icon">🚨</div>
+                <h3 class="card-title">SOS </h3>
+                <p class="card-description">
+                    Instantly send emergency alerts to authorities and emergency contacts with your current location and situation details.
+                </p>
+                <button class="card-button">Activate SOS</button>
+            </div>
+
+            <!-- Live Location Card -->
+            <div class="feature-card location-card" onclick="shareLocation()">
+                <div class="card-icon">📍</div>
+                <h3 class="card-title">Live Location Sharing</h3>
+                <p class="card-description">
+                    Real-time GPS tracking and geo-fencing to keep your loved ones informed about your whereabouts during travel.
+                </p>
+                <button class="card-button">Share Location</button>
+            </div>
+
+            <!-- Incident Tracking Card -->
+            <div class="feature-card tracking-card" onclick="viewIncidents()">
+                <div class="card-icon">📊</div>
+                <h3 class="card-title">Incident Tracking</h3>
+                <p class="card-description">
+                    Monitor and track safety incidents in real-time with blockchain-secured digital identity verification.
+                </p>
+                <button class="card-button">View Incidents</button>
+            </div>
+
+            <!-- Police Integration Card -->
+            <div class="feature-card police-card" onclick="connectPolice()">
+                <div class="card-icon">🚔</div>
+                <h3 class="card-title">Police Integration</h3>
+                <p class="card-description">
+                    Direct connection with local police departments and emergency services for immediate assistance and response.
+                </p>
+                <button class="card-button">Connect to Police</button>
+            </div>
+
+        </div>
+        <div class="container mt-5">
+        <h2>Nearby Attractions & Hotels</h2>
+        <div id="map" style="height: 400px; width: 100%; border-radius: 8px;"></div>
+        </div>
+
+        
+
+<%- include("footer.ejs") %>       

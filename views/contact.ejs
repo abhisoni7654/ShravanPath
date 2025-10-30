@@ -1,0 +1,295 @@
+<%- include("header.ejs") %>    
+
+    <!-- Main Container -->
+    <div class="main-container">
+        <!-- Page Header -->
+        <div class="page-header">
+            <h1 class="page-title">Contact Us</h1>
+            <p class="page-subtitle">Get in touch with our support team for assistance and inquiries</p>
+        </div>
+
+        <!-- Emergency Banner -->
+        <div class="emergency-banner">
+            <h2 class="emergency-title">🚨 24/7 Emergency Helpline</h2>
+            <p class="emergency-text">For immediate assistance and emergencies</p>
+            <div class="emergency-number">1800-111-363</div>
+        </div>
+
+        <!-- Contact Grid -->
+        <div class="contact-grid">
+            <!-- Contact Form -->
+            <div class="contact-form-section">
+                <h2 class="section-title">
+                    <span class="section-icon">✉️</span>
+                    Send us a Message
+                </h2>
+                <form class="contact-form" onsubmit="submitForm(event)">
+                    <div class="form-group">
+                        <label class="form-label" for="name">Full Name *</label>
+                        <input 
+                        type="text" 
+                        id="name" 
+                        class="form-input" 
+                        name="name" 
+                        required 
+                        placeholder="Enter your full name"
+                        >
+                    </div>
+
+                    <div class="form-group">
+                        <label class="form-label" for="email">Email Address *</label>
+                        <input 
+                        type="email" 
+                        id="email" 
+                        class="form-input" 
+                        name="email" 
+                        required 
+                        placeholder="Enter your email"
+                        >
+                    </div>
+
+                    <div class="form-group">
+                        <label class="form-label" for="phone">Contact Number</label>
+                        <input 
+                        type="tel" 
+                        id="phone" 
+                        class="form-input" 
+                        name="phone" 
+                        placeholder="Enter your phone number"
+                        >
+                    </div>
+
+                    <div class="form-group">
+                        <label class="form-label" for="category">Inquiry Category *</label>
+                        <select 
+                        id="category" 
+                        class="form-select" 
+                        name="category" 
+                        required
+                        >
+                        <option value="">Select a category</option>
+                        <option value="technical">Technical Support</option>
+                        <option value="emergency">Emergency Assistance</option>
+                        <option value="feedback">Feedback & Suggestions</option>
+                        <option value="partnership">Partnership Inquiries</option>
+                        <option value="general">General Information</option>
+                        <option value="bug">Bug Report</option>
+                        </select>
+                    </div>
+
+                    <div class="form-group">
+                        <label class="form-label" for="subject">Subject *</label>
+                        <input 
+                        type="text" 
+                        id="subject" 
+                        class="form-input" 
+                        name="subject" 
+                        required 
+                        placeholder="Brief subject of your message"
+                        >
+                    </div>
+
+                    <div class="form-group">
+                        <label class="form-label" for="message">Message *</label>
+                        <textarea 
+                        id="message" 
+                        class="form-textarea" 
+                        name="message" 
+                        required 
+                        placeholder="Describe your inquiry in detail..."
+                        ></textarea>
+                    </div>
+
+                    <button type="submit" class="submit-btn">Send Message</button>
+                    </form>
+
+            </div>
+
+            <!-- Contact Information -->
+            <div class="contact-info-section">
+                <!-- Emergency Contact -->
+                <div class="info-card">
+                    <div class="info-card-header">
+                        <div class="info-icon emergency-icon">🚨</div>
+                        <h3 class="info-title">Emergency Services</h3>
+                    </div>
+                    <div class="info-content">
+                        <div class="contact-item">
+                            <span class="contact-item-icon">📞</span>
+                            <a href="tel:1800111363" class="contact-link">1800-111-363 (Toll Free)</a>
+                        </div>
+                        <div class="contact-item">
+                            <span class="contact-item-icon">📧</span>
+                            <a href="mailto:emergency@smarttouristsafety.gov.in" class="contact-link">emergency@smarttouristsafety.gov.in</a>
+                        </div>
+                        <p>Available 24/7 for immediate assistance and emergency situations.</p>
+                    </div>
+                </div>
+
+                <!-- Support Contact -->
+                <div class="info-card">
+                    <div class="info-card-header">
+                        <div class="info-icon support-icon">💬</div>
+                        <h3 class="info-title">Customer Support</h3>
+                    </div>
+                    <div class="info-content">
+                        <div class="contact-item">
+                            <span class="contact-item-icon">📞</span>
+                            <a href="tel:1800225522" class="contact-link">1800-225-522</a>
+                        </div>
+                        <div class="contact-item">
+                            <span class="contact-item-icon">📧</span>
+                            <a href="mailto:support@smarttouristsafety.gov.in" class="contact-link">support@smarttouristsafety.gov.in</a>
+                        </div>
+                        <div class="contact-item">
+                            <span class="contact-item-icon">🕒</span>
+                            <span>Mon-Fri: 9:00 AM - 6:00 PM IST</span>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Technical Support -->
+                <div class="info-card">
+                    <div class="info-card-header">
+                        <div class="info-icon technical-icon">🔧</div>
+                        <h3 class="info-title">Technical Support</h3>
+                    </div>
+                    <div class="info-content">
+                        <div class="contact-item">
+                            <span class="contact-item-icon">📧</span>
+                            <a href="mailto:tech@smarttouristsafety.gov.in" class="contact-link">tech@smarttouristsafety.gov.in</a>
+                        </div>
+                        <div class="contact-item">
+                            <span class="contact-item-icon">💻</span>
+                            <a href="#" class="contact-link">Live Chat Support</a>
+                        </div>
+                        <p>For app issues, technical queries, and system troubleshooting.</p>
+                    </div>
+                </div>
+
+                <!-- Government Office -->
+                <div class="info-card">
+                    <div class="info-card-header">
+                        <div class="info-icon govt-icon">🏛️</div>
+                        <h3 class="info-title">Government Office</h3>
+                    </div>
+                    <div class="info-content">
+                        <div class="contact-item">
+                            <span class="contact-item-icon">📧</span>
+                            <a href="mailto:info@smarttouristsafety.gov.in" class="contact-link">info@smarttouristsafety.gov.in</a>
+                        </div>
+                        <div class="contact-item">
+                            <span class="contact-item-icon">📞</span>
+                            <a href="tel:01123382045" class="contact-link">011-2338-2045</a>
+                        </div>
+                        <p>Ministry of Tourism, Government of India</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Office Locations -->
+        <div class="offices-section">
+            <h2 class="section-title">
+                <span class="section-icon">🏢</span>
+                Office Locations
+            </h2>
+            <div class="offices-grid">
+                <div class="office-card">
+                    <h3 class="office-title">Headquarters - New Delhi</h3>
+                    <div class="office-address">
+                        Transport Bhawan, 1 Parliament Street,<br>
+                        New Delhi - 110001<br>
+                        Ministry of Tourism, Government of India
+                    </div>
+                    <div class="contact-item">
+                        <span class="contact-item-icon">📞</span>
+                        <a href="tel:01123382045" class="contact-link">011-2338-2045</a>
+                    </div>
+                </div>
+                <div class="office-card">
+                    <h3 class="office-title">Regional Office - Mumbai</h3>
+                    <div class="office-address">
+                        123 Government Colony, Bandra East,<br>
+                        Mumbai - 400051<br>
+                        Maharashtra
+                    </div>
+                    <div class="contact-item">
+                        <span class="contact-item-icon">📞</span>
+                        <a href="tel:02226561234" class="contact-link">022-2656-1234</a>
+                    </div>
+                </div>
+                <div class="office-card">
+                    <h3 class="office-title">Regional Office - Bengaluru</h3>
+                    <div class="office-address">
+                        45 Vidhana Soudha Complex,<br>
+                        Bengaluru - 560001<br>
+                        Karnataka
+                    </div>
+                    <div class="contact-item">
+                        <span class="contact-item-icon">📞</span>
+                        <a href="tel:08022251234" class="contact-link">080-2225-1234</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- FAQ Section -->
+        <div class="faq-section">
+            <h2 class="section-title">
+                <span class="section-icon">❓</span>
+                Frequently Asked Questions
+            </h2>
+            
+            <div class="faq-item">
+                <div class="faq-question" onclick="toggleFAQ(this)">
+                    How do I register for Smart Tourist Safety?
+                    <span class="faq-toggle">+</span>
+                </div>
+                <div class="faq-answer">
+                    You can register through our mobile app or website by providing basic information including your Aadhaar/Passport details. The digital ID verification process takes less than 2 minutes.
+                </div>
+            </div>
+
+            <div class="faq-item">
+                <div class="faq-question" onclick="toggleFAQ(this)">
+                    What should I do in case of an emergency?
+                    <span class="faq-toggle">+</span>
+                </div>
+                <div class="faq-answer">
+                    Press the emergency panic button in the app or call our 24/7 helpline at 1800-111-363. Your location will be automatically shared with emergency services and your emergency contacts.
+                </div>
+            </div>
+
+            <div class="faq-item">
+                <div class="faq-question" onclick="toggleFAQ(this)">
+                    Is my personal data secure?
+                    <span class="faq-toggle">+</span>
+                </div>
+                <div class="faq-answer">
+                    Yes, we use blockchain technology and end-to-end encryption to ensure your data is completely secure. All information is stored in compliance with government data protection standards.
+                </div>
+            </div>
+
+            <div class="faq-item">
+                <div class="faq-question" onclick="toggleFAQ(this)">
+                    Does the app work offline?
+                    <span class="faq-toggle">+</span>
+                </div>
+                <div class="faq-answer">
+                    Critical safety features including emergency alerts work offline using cached data and SMS fallbacks. However, real-time tracking requires internet connectivity.
+                </div>
+            </div>
+
+            <div class="faq-item">
+                <div class="faq-question" onclick="toggleFAQ(this)">
+                    How do I report a technical issue?
+                    <span class="faq-toggle">+</span>
+                </div>
+                <div class="faq-answer">
+                    You can report technical issues through this contact form, email tech@smarttouristsafety.gov.in, or use the in-app bug reporting feature.
+                </div>
+            </div>
+        </div>
+    </div>
+<%- include("footer.ejs") %>        

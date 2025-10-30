@@ -1,0 +1,523 @@
+ {
+
+  "type": "FeatureCollection",
+
+  "features": [
+
+    
+
+    {
+
+      "type": "Feature",
+
+      "geometry": {
+
+        "type": "Polygon",
+
+        "coordinates": [
+
+          [
+
+            [75.820, 26.920], [75.825, 26.920], [75.825, 26.925], [75.820, 26.925], [75.820, 26.920]
+
+          ]
+
+        ]
+
+      },
+
+      "properties": {
+
+        "name": "Old City High-Theft Zone",
+
+        "riskLevel": "high",
+
+        "riskType": "pickpocketing",
+
+        "advice": "High pickpocketing area. Secure your valuables and be aware of your surroundings."
+
+      }
+
+    },
+
+    {
+
+      "type": "Feature",
+
+      "geometry": {
+
+        "type": "Polygon",
+
+        "coordinates": [
+
+          [
+
+            [75.818, 26.926], [75.822, 26.926], [75.822, 26.929], [75.818, 26.929], [75.818, 26.926]
+
+          ]
+
+        ]
+
+      },
+
+      "properties": {
+
+        "name": "Johari Bazaar (Extreme Congestion)",
+
+        "riskLevel": "medium",
+
+        "riskType": "congestion",
+
+        "advice": "High congestion area. Mind your belongings and move carefully."
+
+      }
+
+    },
+
+    {
+
+      "type": "Feature",
+
+      "geometry": {
+
+        "type": "Polygon",
+
+        "coordinates": [
+
+          [
+
+            [75.785, 26.915], [75.790, 26.915], [75.790, 26.920], [75.785, 26.920], [75.785, 26.915]
+
+          ]
+
+        ]
+
+      },
+
+      "properties": {
+
+        "name": "Civil Lines (Low Incident Rate)",
+
+        "riskLevel": "low",
+
+        "riskType": "general",
+
+        "advice": "This is a low-risk area. Enjoy your visit."
+
+      }
+
+    },
+
+    {
+
+      "type": "Feature",
+
+      "geometry": {
+
+        "type": "Polygon",
+
+        "coordinates": [
+
+          [
+
+            [75.808, 26.890], [75.812, 26.890], [75.812, 26.893], [75.808, 26.893], [75.808, 26.890]
+
+          ]
+
+        ]
+
+      },
+
+      "properties": {
+
+        "name": "Gopalpura Bypass (High Traffic)",
+
+        "riskLevel": "medium",
+
+        "riskType": "traffic",
+
+        "advice": "High traffic area. Be careful when crossing roads."
+
+      }
+
+    },
+
+    {
+
+      "type": "Feature",
+
+      "geometry": {
+
+        "type": "Polygon",
+
+        "coordinates": [
+
+          [
+
+            [75.750, 26.850], [75.755, 26.850], [75.755, 26.855], [75.750, 26.855], [75.750, 26.850]
+
+          ]
+
+        ]
+
+      },
+
+      "properties": {
+
+        "name": "Patrakar Colony (Residential)",
+
+        "riskLevel": "low",
+
+        "riskType": "general",
+
+        "advice": "This is a low-risk residential area."
+
+      }
+
+    },
+
+    {
+
+      "type": "Feature",
+
+      "geometry": {
+
+        "type": "Polygon",
+
+        "coordinates": [
+
+          [
+
+            [75.850, 26.960], [75.853, 26.960], [75.853, 26.963], [75.850, 26.963], [75.850, 26.960]
+
+          ]
+
+        ]
+
+      },
+
+      "properties": {
+
+        "name": "Amer Fort Approach (Scam Risk)",
+
+        "riskLevel": "high",
+
+        "riskType": "scam",
+
+        "advice": "Be cautious of unsolicited guides or offers. Only use official vendors."
+
+      }
+
+    },
+
+    {
+
+      "type": "Feature",
+
+      "geometry": {
+
+        "type": "Polygon",
+
+        "coordinates": [
+
+          [
+
+            [75.775, 26.918], [75.780, 26.918], [75.780, 26.922], [75.775, 26.922], [75.775, 26.918]
+
+          ]
+
+        ]
+
+      },
+
+      "properties": {
+
+        "name": "Bani Park (Quiet Area)",
+
+        "riskLevel": "low",
+
+        "riskType": "general",
+
+        "advice": "This is a low-risk area."
+
+      }
+
+    },
+
+    {
+
+      "type": "Feature",
+
+      "geometry": {
+
+        "type": "Polygon",
+
+        "coordinates": [
+
+          [
+
+            [75.790, 26.900], [75.795, 26.900], [75.795, 26.905], [75.790, 26.905], [75.790, 26.900]
+
+          ]
+
+        ]
+
+      },
+
+      "properties": {
+
+        "name": "C-Scheme (Moderate Risk)",
+
+        "riskLevel": "medium",
+
+        "riskType": "general",
+
+        "advice": "Exercise standard caution."
+
+      }
+
+    },
+
+    {
+
+      "type": "Feature",
+
+      "geometry": {
+
+        "type": "Polygon",
+
+        "coordinates": [
+
+          [
+
+            [75.780, 26.880], [75.785, 26.880], [75.785, 26.885], [75.780, 26.885], [75.780, 26.880]
+
+          ]
+
+        ]
+
+      },
+
+      "properties": {
+
+        "name": "Shyam Nagar (Residential)",
+
+        "riskLevel": "low",
+
+        "riskType": "general",
+
+        "advice": "This is a low-risk area."
+
+      }
+
+    },
+
+    {
+
+      "type": "Feature",
+
+      "geometry": {
+
+        "type": "Polygon",
+
+        "coordinates": [
+
+          [
+
+            [75.830, 26.850], [75.835, 26.850], [75.835, 26.855], [75.830, 26.855], [75.830, 26.850]
+
+          ]
+
+        ]
+
+      },
+
+      "properties": {
+
+        "name": "Jagatpura (Poor Lighting)",
+
+        "riskLevel": "high",
+
+        "riskType": "poor_lighting",
+
+        "advice": "Area is poorly lit. Avoid traveling alone at night."
+
+      }
+
+    },
+
+    {
+
+      "type": "Feature",
+
+      "geometry": {
+
+        "type": "Polygon",
+
+        "coordinates": [
+
+          [
+
+            [75.815, 26.930], [75.820, 26.930], [75.820, 26.935], [75.815, 26.935], [75.815, 26.930]
+
+          ]
+
+        ]
+
+      },
+
+      "properties": {
+
+        "name": "Chandpole Bazaar (Pickpocketing)",
+
+        "riskLevel": "high",
+
+        "riskType": "pickpocketing",
+
+        "advice": "High pickpocketing risk. Keep wallets secure and avoid back pockets."
+
+      }
+
+    },
+
+    {
+
+      "type": "Feature",
+
+      "geometry": {
+
+        "type": "Polygon",
+
+        "coordinates": [
+
+          [
+
+            [75.770, 26.910], [75.775, 26.910], [75.775, 26.915], [75.770, 26.915], [75.770, 26.910]
+
+          ]
+
+        ]
+
+      },
+
+      "properties": {
+
+        "name": "Sindhi Camp (Nighttime Risk)",
+
+        "riskLevel": "medium",
+
+        "riskType": "general",
+
+        "advice": "Be cautious in this area, especially after dark."
+
+      }
+
+    },
+
+    {
+
+      "type": "Feature",
+
+      "geometry": {
+
+        "type": "Polygon",
+
+        "coordinates": [
+
+          [
+
+            [75.758, 26.905], [75.762, 26.905], [75.762, 26.908], [75.758, 26.908], [75.758, 26.905]
+
+          ]
+
+        ]
+
+      },
+
+      "properties": {
+
+        "name": "Vaishali Nagar (Residential)",
+
+        "riskLevel": "low",
+
+        "riskType": "general",
+
+        "advice": "This is a low-risk residential area."
+
+      }
+
+    },
+
+    {
+
+      "type": "Feature",
+
+      "geometry": {
+
+        "type": "Polygon",
+
+        "coordinates": [
+
+          [
+
+            [75.825, 26.912], [75.828, 26.912], [75.828, 26.914], [75.825, 26.914], [75.825, 26.912]
+
+          ]
+
+        ]
+
+      },
+
+      "properties": {
+
+        "name": "Near Hawa Mahal (High Congestion)",
+
+        "riskLevel": "medium",
+
+        "riskType": "congestion",
+
+        "advice": "Very crowded area. Be aware of your surroundings."
+
+      }
+
+    },
+
+    {
+
+      "type": "Feature",
+
+      "geometry": {
+
+        "type": "Polygon",
+
+        "coordinates": [
+
+          [
+
+            [75.840, 26.895], [75.845, 26.895], [75.845, 26.900], [75.840, 26.900], [75.840, 26.895]
+
+          ]
+
+        ]
+
+      },
+
+      "properties": {
+
+        "name": "Adarsh Nagar (Isolated Streets)",
+
+        "riskLevel": "high",
+
+        "riskType": "poor_lighting",
+
+        "advice": "Some streets are isolated and poorly lit. Avoid walking alone."
+
+      }
+
+    }
+
+      
+
+  ]
+
+} 

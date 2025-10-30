@@ -1,0 +1,26 @@
+[
+  {
+    "aadhaarNumber": "42040919314034",
+    "fullName": "Traci Willms",
+    "currentTravel": "jaipur",
+    "blockchain_id": "aea547a83b3187bfae7ded7aabcb1c0370b13e23c26e142c32030dea767bcb8b",
+    "emergencyContacts": [
+      {
+        "name": "xyz",
+        "mobile": "87878787878787"
+      }
+    ]
+  },
+  {
+    "aadhaarNumber": "84362536157304",
+    "fullName": "Mr. Emmett Marks",
+    "currentTravel": "jaipur",
+    "blockchain_id": "74b86ffab634a4aaf66e9016cddab483dcf9e1fd6f7ee18fc951025ddab3815a",
+    "emergencyContacts": [
+      {
+        "name": "abc ",
+        "mobile": "+919301717803"
+      }
+    ]
+  }
+]

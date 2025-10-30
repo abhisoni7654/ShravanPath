@@ -1,0 +1,43 @@
+<%- include('header.ejs') %>
+
+<div id="user-login-container">
+    <div class="user-login-wrapper">
+        <div class="user-login-card">
+            <div class="user-card-header">
+                <h3>User Login</h3>
+                <p class="user-subtitle">For previously verified users.</p>
+            </div>
+            <div class="user-card-body">
+
+                <% if (typeof error !== 'undefined' && error) { %>
+                    <div class="user-error-alert">
+                        <% if (error === 'not_found') { %>
+                            User not found. Please register first.
+                        <% } else if (error === 'wrong_password') { %>
+                            The password is incorrect.
+                        <% } else { %>
+                            Invalid login credentials.
+                        <% } %>
+                    </div>
+                <% } %>
+
+                <form action="/login" method="POST">
+                    <div class="user-form-group">
+                        <label for="aadhaarNumber" class="user-form-label">Aadhaar Number</label>
+                        <input type="text" class="user-form-control" id="aadhaarNumber" name="aadhaarNumber" required>
+                    </div>
+                    <div class="user-form-group">
+                        <label for="password" class="user-form-label">Password</label>
+                        <input type="password" class="user-form-control" id="password" name="password" required>
+                    </div>
+                    <button type="submit" class="user-login-btn">Login</button>
+                </form>
+                <div class="user-login-footer">
+                    <a href="/">New User? Verify Here</a>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<%- include('footer.ejs') %>

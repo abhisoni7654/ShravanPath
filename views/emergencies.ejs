@@ -1,0 +1,63 @@
+<%- include("header.ejs") %>
+
+<div id="ea-container">
+    <div class="ea-header">
+        <h1 class="ea-title">🚨 Emergency Alerts</h1>
+    </div>
+
+    <a href="/dashboard" class="ea-back-btn">← Back to Dashboard</a>
+    
+    <div class="ea-card">
+        <% if (emergencies && emergencies.length > 0) { %>
+            <div class="ea-table-wrapper">
+                <table class="ea-table">
+                    <thead class="ea-table-head">
+                        <tr>
+                            <th>Timestamp</th>
+                            <th>Full Name</th>
+                            <th>Location</th>
+                            <th>Status</th>
+                            <th>Actions</th>
+                        </tr>
+                    </thead>
+                    <tbody class="ea-table-body">
+                        <% emergencies.slice().reverse().forEach(alert => { %>
+                            <tr class="ea-row <%= alert.isResolved ? 'ea-row-resolved' : '' %>">
+                                <td class="ea-cell"><%= new Date(alert.timestamp).toLocaleString() %></td>
+                                <td class="ea-cell"><%= alert.fullName %></td>
+                                <td class="ea-cell">
+                                    <a href="https://www.google.com/maps?q=<%= alert.location.latitude %>,<%= alert.location.longitude %>" target="_blank" class="ea-btn ea-btn-sm ea-btn-info">
+                                        Open Map
+                                    </a>
+                                </td>
+                                <td class="ea-cell">
+                                    <% if (alert.isResolved) { %>
+                                        <span class="ea-badge ea-badge-success">Resolved</span>
+                                        <small class="ea-small"><%= new Date(alert.timeOfResolution).toLocaleTimeString() %></small>
+                                    <% } else { %>
+                                        <span class="ea-badge ea-badge-danger">Active</span>
+                                    <% } %>
+                                </td>
+                                <td class="ea-cell">
+                                    <% if (!alert.isResolved) { %>
+                                        <button class="ea-btn ea-btn-sm ea-btn-warning" onclick="resolveEmergency('<%= alert.timestamp %>', '<%= alert.aadhaarNumber %>')">
+                                            Mark as Resolved
+                                        </button>
+                                    <% } else { %>
+                                        <span>✔️</span>
+                                    <% } %>
+                                </td>
+                            </tr>
+                        <% }); %>
+                    </tbody>
+                </table>
+            </div>
+        <% } else { %>
+            <div class="ea-alert ea-alert-success">
+                No emergency alerts have been reported.
+            </div>
+        <% } %>
+    </div>
+</div>
+
+<%- include('footer.ejs') %>

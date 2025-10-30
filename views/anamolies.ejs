@@ -1,0 +1,58 @@
+<%- include('header.ejs') %>
+
+<div class="vt-dashboard-header" id="vt-dashboard-header">
+    <h1 class="vt-dashboard-title">Dashboard: Verified Tourists</h1>
+    <div class="vt-dashboard-actions">
+        <a href="/ledger" class="vt-btn vt-btn-primary">View Ledger</a>
+        <a href="/admin/emergencies" class="vt-btn vt-btn-danger">View Emergencies</a>
+        <a href="/admin/anomalies" class="vt-btn vt-btn-warning">View Anomalies</a>
+        <a href="/admin/login" class="vt-btn vt-btn-outline-danger">Logout</a>
+    </div>
+</div>
+
+<div class="vt-card">
+    <div class="vt-card-body">
+        <% if (users && users.length > 0) { %>
+            <table class="vt-table">
+                <thead>
+                    <tr>
+                        <th>Full Name</th>
+                        <th>Blockchain ID</th>
+                        <th>Live Location</th>
+                        <th>Status</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <% users.forEach(user => { %>
+                        <tr>
+                            <td><%= user.fullName %></td>
+                            <td class="vt-monospace"><%= user.blockchain_id %></td>
+                            <td>
+                                <% if (user.location) { %>
+                                    <a href="https://www.google.com/maps?q=<%= user.location.latitude %>,<%= user.location.longitude %>" target="_blank" class="vt-btn vt-btn-sm vt-btn-info">
+                                        Open Map
+                                    </a>
+                                <% } else { %>
+                                    <span class="vt-text-muted">Not Available</span>
+                                <% } %>
+                            </td>
+                            <td>
+                                <% if (user.status && user.status.includes("Anomaly")) { %>
+                                    <span class="vt-badge vt-badge-danger"><%= user.status %></span>
+                                <% } else { %>
+                                    <span class="vt-badge vt-badge-success">Normal</span>
+                                <% } %>
+                            </td>
+                        </tr>
+                    <% }); %>
+                </tbody>
+            </table>
+        <% } else { %>
+            <div class="vt-alert vt-alert-info">
+                No verified users found in the system yet.
+            </div>
+        <% } %>
+    </div>
+</div>
+
+<%- include('footer.ejs') %>

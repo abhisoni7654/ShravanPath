@@ -1,0 +1,151 @@
+<!--footer-->
+       <div>
+        <footer class="footer">
+        MUJ HackX 3.0
+      </footer>
+    </div>
+    <script src="https://cdn.jsdelivr.net/npm/qrcodejs@1.0.0/qrcode.min.js"></script>
+    <script>
+  window.addEventListener('load', () => {
+    const blockchainId = sessionStorage.getItem('userBlockchainId');
+    
+    if (blockchainId && navigator.geolocation) {
+      navigator.geolocation.getCurrentPosition(sendPositionToServer, showError);
+    } else {
+      console.log("No blockchain ID found or geolocation is not supported.");
+    }
+  });
+
+  async function sendPositionToServer(position) {
+    const payload = {
+      blockchain_id: sessionStorage.getItem('userBlockchainId'),
+      latitude: position.coords.latitude,
+      longitude: position.coords.longitude,
+    };
+
+    try {
+      const response = await fetch('/api/update-location', {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json',
+        },
+        body: JSON.stringify(payload)
+      });
+      const result = await response.json();
+      console.log('Location update result:', result);
+    } catch (error) {
+      console.error('Failed to send location to server:', error);
+    }
+  }
+   async function resolveEmergency(timestamp, aadhaarNumber) {
+    const secretWord = prompt("To resolve this emergency, please enter the user's secret word:");
+
+    if (!secretWord) {
+        alert("Resolution cancelled.");
+        return;
+    }
+
+    try {
+        const response = await fetch('/api/resolve-emergency', {
+            method: 'POST',
+            headers: { 'Content-Type': 'application/json' },
+            body: JSON.stringify({ timestamp, aadhaarNumber, secretWord })
+        });
+        const result = await response.json();
+
+        if (result.success) {
+            alert('Emergency successfully marked as resolved!');
+            location.reload();
+        } else {
+            alert('Failed to resolve: ' + result.message);
+        }
+    } catch (error) {
+        alert('An error occurred. Please try again.');
+    }
+}
+document.getElementById('langToggle').addEventListener('click', async () => {
+  console.log("Translating...");
+  const elems = document.querySelectorAll('.translatable');
+  const texts = Array.from(elems).map(el => el.innerText);
+  const source = 'en';
+  const target = 'hi';
+  // translate one by one or in batch
+  for (let i = 0; i < elems.length; i++) {
+    const response = await fetch('/api/translate', {
+      method: 'POST',
+      headers: {'Content-Type':'application/json'},
+      body: JSON.stringify({ text: texts[i], source, target })
+    });
+    const json = await response.json();
+    if (json.success) {
+      elems[i].innerText = json.translatedText;
+    }
+  }
+  // optionally change the button to let user go back etc.
+});
+function removeGoogleBanner() {
+    // Kill iframe
+    var frame = document.querySelector(".goog-te-banner-frame");
+    if (frame) frame.style.display = "none";
+
+    // Kill parent styles (Google sets top margin)
+    document.body.style.top = "0px";
+  }
+
+  // Run after Google Translate loads
+  document.addEventListener("DOMNodeInserted", function (event) {
+    if (event.target.className === "goog-te-banner-frame") {
+      removeGoogleBanner();
+    }
+  });
+async function completeTravel(aadhaarNumber) {
+        const secretWord = prompt("To complete this user's travel and delete their record, please enter their secret word:");
+
+        if (!secretWord) {
+            alert("Action cancelled.");
+            return;
+        }
+
+        try {
+            const response = await fetch('/api/complete-travel', {
+                method: 'POST',
+                headers: { 'Content-Type': 'application/json' },
+                body: JSON.stringify({ aadhaarNumber, secretWord })
+            });
+            const result = await response.json();
+
+            if (result.success) {
+                alert('Verification successful! User record has been deleted.');
+                location.reload(); // Refresh the page to show the updated user list
+            } else {
+                alert('Failed: ' + result.message);
+            }
+        } catch (error) {
+            alert('A server error occurred. Please try again.');
+        }
+    }
+  // Also run on page load just in case
+  window.addEventListener("load", removeGoogleBanner);
+
+  function showError(error) {
+    switch(error.code) {
+      case error.PERMISSION_DENIED:
+        console.log("User denied the request for Geolocation.");
+        break;
+      case error.POSITION_UNAVAILABLE:
+        console.log("Location information is unavailable.");
+        break;
+      case error.TIMEOUT:
+        console.log("The request to get user location timed out.");
+        break;
+      case error.UNKNOWN_ERROR:
+        console.log("An unknown error occurred.");
+        break;
+    }
+  }
+</script>
+    
+    <script src="script.js"></script>
+    
+</body>
+</html>
